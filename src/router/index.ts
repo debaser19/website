@@ -22,6 +22,11 @@ import PlayerActivityTab from "@/components/overal-statistics/tabs/PlayerActivit
 import WinrateTab from "@/components/overal-statistics/tabs/WinratesTab.vue";
 import MmrDistributionTab from "@/components/overal-statistics/tabs/MmrDistributionTab.vue";
 import HeroTab from "@/components/overal-statistics/tabs/HeroTab.vue";
+import AdminPlayerManagementProfileTab from "@/components/admin/playermanagement/tabs/AdminPlayerManagementProfileTab.vue";
+import AdminPlayerManagementPortraitsTab from "@/components/admin/playermanagement/tabs/AdminPlayerManagementPortraitsTab.vue";
+import AdminPlayerManagementSanctionsTab from "@/components/admin/playermanagement/tabs/AdminPlayerManagementSanctionsTab.vue";
+import AdminPlayerManagementFlosettingsTab from "@/components/admin/playermanagement/tabs/AdminPlayerManagementFlosettingsTab.vue";
+import AdminPlayerManagementStatsTab from "@/components/admin/playermanagement/tabs/AdminPlayerManagementStatsTab.vue";
 
 Vue.use(VueRouter);
 
@@ -174,6 +179,33 @@ const routes = [
     path: "/AdminOnlyView",
     name: "Admin",
     component: Admin,
+    children: [
+      {
+        path: "player-profile",
+        name: "AdminPlayerManagementProfileTab",
+        component: AdminPlayerManagementProfileTab
+      },
+      {
+        path: "portraits",
+        name: "AdminPlayerManagementPortraitsTab",
+        component: AdminPlayerManagementPortraitsTab
+      },
+      {
+        path: "sanctions",
+        name: "AdminPlayerManagementSanctionsTab",
+        component: AdminPlayerManagementSanctionsTab
+      },
+      {
+        path: "flo-settings",
+        name: "AdminPlayerManagementFlosettingsTab",
+        component: AdminPlayerManagementFlosettingsTab
+      },
+      {
+        path: "stats",
+        name: "AdminPlayerManagementStatsTab",
+        component: AdminPlayerManagementStatsTab
+      }
+    ]
   },
   {
     path: "/tournaments",
